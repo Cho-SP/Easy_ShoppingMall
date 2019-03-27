@@ -1,0 +1,29 @@
+.register-text{
+    width:40%;
+    height:50px;
+    margin:0 0 10px 0;
+    font-size:20px;
+}
+.regibut{
+    font-family: 'Oswald', sans-serif;
+    width:40%;
+    height:50px;
+    background-color:#504a4a;
+    border:none;
+    color:#ffffff;
+    font-size:20px;
+    cursor:pointer;
+    margin:10px;
+
+}
+button{
+    font-weight:bold;
+    width:20%;
+    height:50px;
+    font-size:20px;
+    border:none;
+    background-color:#ff7300;
+    color:#ffffff;
+    margin:0 0 50px 0;
+    cursor:pointer;
+}

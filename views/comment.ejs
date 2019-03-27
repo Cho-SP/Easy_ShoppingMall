@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel="stylesheet" href="/stylesheets/comment.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="/javascripts/scroll.js"></script>
+</head>
+  <body>
+        <% if(sess){ %>
+            <p>
+              <%= nick.idname %> is login
+            </p>
+          <% } %>
+      <header>
+        <center>
+        <h1><a href="/">Wearing</a></h1>
+        </center>
+      </header>
+    <div id="menu">
+        <a href="/shop">SHOP</a>
+        <a href="/comment">COMMENT</a>
+        <% if(sess){ %>
+            <a href="/logout" class="login">LOGOUT</a>
+          <% } else { %>
+          <a href="/login" class="login">LOGIN</a>
+          <% } %>
+        <a href="/developer">DEVELOPER</a>
+    </div>
+    <div class="wrapper">
+            <center>
+                <% if(!sess){ %>
+                <form action="/comment" method="POST">
+        <table>
+            <tr>
+                <td class="ftd"><div class="tabletitle">&nbsp&nbspName</div></td>
+                <td class="ftd"><input type="text" placeholder=" Name" class="outline" name="name" required></td>
+                <td class="ftd"><div class="tabletitle">&nbsp&nbspPassword</div></td>
+                <td class="ftd"><input type="password" placeholder=" Password" class="outline" name="password" required></td>
+            </tr>
+            <tr>
+                <td colspan=4 class="ftd"><textarea name="content" cols="80" rows="10" class="outline" required></textarea></td>
+            </tr>
+            <tr>
+                <td colspan=4 class="submitline" class="ftd"><center><input type="submit" value="Submit" class="submit"></center></td>
+            </tr>
+        </table>
+        <% } else { %>
+            <form action="/sessioncomment" method="POST">
+            <table>
+                <tr>
+                    <td colspan=4 class="ftd"><textarea name="session_content" cols="80" rows="10" class="outline" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan=4 class="submitline" class="ftd"><center><input type="submit" value="Submit" class="submit"></center></td>
+                </tr>
+            </table>
+        <% } %>
+        </center>
+        </form>
+        <center>
+            <% for(var i=0; i < shdb.length; i++) { %>
+                <hr>
+                <br>
+            <table class="result-table">
+                <tr>
+                    <td class="rname"><%= shdb[i].name %></td>
+                </tr>
+                <tr>
+                    <td class="rcontent"><%= shdb[i].content %></td>
+                </tr>
+                <tr>
+                    <form action="/del/<%= shdb[i]._id %>" method="POST">
+                        <td class="rbutton">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <input type="password" name="delpass" class="deltext" placeholder="Password"><input class="delbut" type="submit" value="Delete"></td>
+                    </form>
+                </tr>
+            </table>
+            <br>
+            <% } %>
+        </center>
+    </div>
+    <div class="footer">
+      
+    </div>
+  </body>
+</html>

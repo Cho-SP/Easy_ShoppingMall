@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="/javascripts/scroll.js"></script>
+</head>
+  <body>
+      <header>
+        <center>
+        <h1><a href="/">Wearing</a></h1>
+        </center>
+      </header>
+    <div id="menu">
+        <a href="/shop">SHOP</a>
+        <a href="/comment">COMMENT</a>
+        <% if(sess){ %>
+            <a href="/logout" class="login">LOGOUT</a>
+          <% } else { %>
+          <a href="/login" class="login">LOGIN</a>
+          <% } %>
+        <a href="/developer">DEVELOPER</a>
+    </div>
+    <div class="wrapper">
+      <center>
+            <% for(var i=0; i < use.length; i++){ %>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><%= use[i].idname %></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><%= use[i].email %></td>
+                    </tr>
+                    <tr>
+                        <td>Password&nbsp&nbsp</td>
+                        <td><%= use[i].password %></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td><%= use[i].phone %></td>
+                    </tr>
+                    <tr>
+                        <td>Postal</td>
+                        <td><%= use[i].postal %></td>
+                    </tr>
+                    <tr>
+                        <td>Addr</td>
+                        <td><%= use[i].addr %></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><%= use[i].address %></td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td><%= use[i].date %></td>
+                    </tr>
+                </table>
+                <% } %>
+                <!--
+                <form action="/admin" method="POST">
+                    <table>
+                        <tr>
+                            <td><input type="text" name="aname"></td>
+                            <td><input type="number" name="aprice"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="file" name="aimage"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            -->
+      </center>
+      </div>
+    <div class="footer">
+      
+    </div>
+  </body>
+</html>

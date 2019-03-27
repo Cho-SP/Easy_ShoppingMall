@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="/javascripts/scroll.js"></script>
+  </head>
+  <body>
+      <% if(sess){ %>
+        <p>
+          <%= nick.idname %> is login
+        </p>
+      <% } %>
+      <header>
+        <center>
+        <h1><a href="/">Wearing</a></h1>
+        </center>
+      </header>
+    <div id="menu">
+        <a href="/shop">SHOP</a>
+        <a href="/comment">COMMENT</a>
+        <% if(sess){ %>
+          <a href="/logout" class="login">LOGOUT</a>
+        <% } else { %>
+        <a href="/login" class="login">LOGIN</a>
+        <% } %>
+        <a href="/developer">DEVELOPER</a>
+    </div>
+    <div class="wrapper">
+      <div class="sale">
+        <center>
+          <h2>SALE</h2>
+        </center>
+        <div id="columns">
+          <a href="/shop/1">
+          <figure>
+            <img src="/images/1.jpg">
+            <figcaption><center>데미지 체크셔츠</center></figcaption>
+          </figure>
+          </a>
+          <a href="/shop/2">
+          <figure>
+            <img src="/images/2.jpg">
+            <figcaption><center>캘러닌 린넨 슬랙스</center></figcaption>
+          </figure>
+          </a>
+          <a href="/shop/3">
+          <figure>
+            <img src="/images/3.jpg">
+            <figcaption><center>에르딕 체크 셔츠</center></figcaption>
+          </figure>
+          </a>
+          <a href="/shop/4">
+          <figure>
+            <img src="/images/4.jpg">
+            <figcaption><center>매치 베이직 셔츠</center></figcaption>
+          </figure>
+          </a>
+          <a href="/shop/5">
+          <figure>
+            <img src="/images/5.jpg">
+            <figcaption><center>투포켓 오픈카라 셔츠</center></figcaption>
+          </figure>
+          </a>
+          <a href="/shop/6">
+          <figure>
+            <img src="/images/6.jpg">
+            <figcaption><center>투커 베이직 셔츠</center></figcaption>
+          </figure>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      
+    </div>
+  </body>
+</html>

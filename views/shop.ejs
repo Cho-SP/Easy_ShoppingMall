@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/shop.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="/javascripts/scroll.js"></script>
+  </head>
+  <body>
+        <% if(sess){ %>
+            <p>
+              <%= nick.idname %> is login
+            </p>
+          <% } %>
+      <header>
+        <center>
+        <h1><a href="/">Wearing</a></h1>
+        </center>
+      </header>
+    <div id="menu">
+        <a href="/shop">SHOP</a>
+        <a href="/comment">COMMENT</a>
+        <% if(sess){ %>
+            <a href="/logout" class="login">LOGOUT</a>
+          <% } else { %>
+          <a href="/login" class="login">LOGIN</a>
+          <% } %>
+        <a href="/developer">DEVELOPER</a>
+    </div>
+    <div class="wrapper">
+      <div class="sale">
+        <center>
+          <h2>SHOP</h2>
+        </center>
+        <div class="shopping">
+            <center>
+            <table>
+                <tr>
+                    <td><img src="/images/1.jpg"></td>
+                    <td class="second-td"><h3><center><a href="/shop/1">데미지 체크셔츠</a></center></h3></td>
+                    <td><div class="graytext">43,600원</div><br>21,800원</td>
+                </tr>
+                <tr>
+                    <td><img src="/images/2.jpg"></td>
+                    <td class="second-td"><h3><center><a href="/shop/2">캘러닌 린넨 슬랙스</a></center></h3></td>
+                    <td><div class="graytext">39,600원</div><br>19,800원</td>
+                </tr>
+                <tr>
+                    <td><img src="/images/3.jpg"></td>
+                    <td class="second-td"><h3><center><a href="/shop/3">에르딕 체크 셔츠</a></center></h3></td>
+                    <td><div class="graytext">43,600원</div><br>21,800원</td>
+                </tr>
+                <tr>
+                    <td><img src="/images/4.jpg"></td>
+                    <td class="second-td"><h3><center><a href="/shop/4">매치 베이직 셔츠</a></center></h3></td>
+                    <td><div class="graytext">39,600원</div><br>19,800원</td>
+                </tr>
+                <tr>
+                    <td><img src="/images/5.jpg"></td>
+                    <td class="second-td"><h3><center><a href="/shop/5">투포켓 오픈카라 셔츠</a></center></h3></td>
+                    <td><div class="graytext">39,600원</div><br>19,800원</td>
+                </tr>
+                <tr>
+                    <td><img src="/images/6.jpg"></td>
+                    <td class="second-td"><h3><center><a href="/shop/6">투커 베이직 셔츠</a></center></h3></td>
+                    <td><div class="graytext">39,600원</div><br>19,800원</td>
+                </tr>
+        </table>
+        <!--
+        <% for(var i=0; i < adb.length; i++){ %>
+            <table>
+                <tr>
+                    <td><%= adb[i].aname %></td>
+                </tr>
+                <tr>
+                    <td><%= adb[i].price %></td>
+                </tr>
+                <tr>
+                    <td><%= adb[i].thumbnail %></td>
+                </tr>
+            </table>
+            <% } %>
+        -->
+        </center>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      
+    </div>
+  </body>
+</html>

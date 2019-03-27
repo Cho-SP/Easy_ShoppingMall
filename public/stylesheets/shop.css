@@ -1,0 +1,23 @@
+img{
+    width:80px;
+    height:102px;
+}
+.graytext{
+    text-decoration:line-through;
+    color:#757070;
+}
+.shopping{
+    padding:0 100px 0 100px;
+}
+.second-td{
+    width:500px;
+}
+.second-td a{
+    text-decoration:none;
+    color:#000000;
+    display:block;
+}
+.second-td a:hover{
+    color:#ffffff;
+    background-color:#000000;
+}

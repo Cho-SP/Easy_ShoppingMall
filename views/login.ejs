@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="/javascripts/scroll.js"></script>
+</head>
+  <body>
+      <% if(sess){ %>
+        <p>
+          <%= nick.idname %> is login
+        </p>
+      <% } %>
+      <header>
+        <center>
+        <h1><a href="/">Wearing</a></h1>
+        </center>
+      </header>
+    <div id="menu">
+        <a href="/shop">SHOP</a>
+        <a href="/comment">COMMENT</a>
+        <% if(sess){ %>
+          <a href="/logout" class="login">LOGOUT</a>
+        <% } else { %>
+        <a href="/login" class="login">LOGIN</a>
+        <% } %>
+        <a href="/developer">DEVELOPER</a>
+    </div>
+    <div class="wrapper">
+      <center>
+          <h2>Wearing</h2>
+          <form action="/login" method="POST">
+              <input class="input-text" type="text" name="logname" placeholder=" ID" required><br>
+              <input class="input-text" type="password" name="logpass" placeholder=" Password" required><br>
+              <input class="input-but" type="submit" value="Login">
+          </form>
+          <button class="register-but" onclick="location.href='/register'">Register</button>
+      </center>
+      </div>
+    <div class="footer">
+      
+    </div>
+  </body>
+</html>

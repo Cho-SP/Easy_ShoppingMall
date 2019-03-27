@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="/javascripts/scroll.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script>
+        function openAddr(){
+            daum.postcode.load(function(){
+                new daum.Postcode({
+                    oncomplete: function(data){
+                        $('#addressnum').val(data.zonecode);
+                        $('#living').val(data.address)
+                    }
+                }).open();
+            });
+        }
+    </script>
+</head>
+  <body>
+        <% if(sess){ %>
+            <p>
+              <%= nick.idname %> is login
+            </p>
+          <% } %>
+      <header>
+        <center>
+        <h1><a href="/">Wearing</a></h1>
+        </center>
+      </header>
+    <div id="menu">
+        <a href="/shop">SHOP</a>
+        <a href="/comment">COMMENT</a>
+        <% if(sess){ %>
+            <a href="/logout" class="login">LOGOUT</a>
+          <% } else { %>
+          <a href="/login" class="login">LOGIN</a>
+          <% } %>
+        <a href="/developer">DEVELOPER</a>
+    </div>
+    <div class="wrapper">
+      <center>
+          <form action="/register" method="POST">
+            <h3>Address</h3><input id="addressnum" name="rpostal" class="register-text"type="postnum" type="text" readonly><br>
+            <input id="living" name="raddr" class="register-text" type="text" readonly><br>
+            <input name="raddress" type="text" class="register-text"><br>
+            <button name="livingbut" value="상세주소" onclick="openAddr();">Find address</button><br>
+            <h3>ID</h3><input name="rname"class="register-text" type="text" placeholder="ID" maxlength=12 required><br>
+            <h3>Email</h3><input name="remail" class="register-text" type="text" placeholder="Email" maxlength=20 required><br>
+            <h3>Password</h3><input name="rpassword" class="register-text" type="password" placeholder="Password" maxlength=20 required><br>
+            <h3>Password Check</h3><input name="rpasswordcheck" class="register-text" type="password" placeholder="Password Check" maxlength=20 required><br>
+            <h3>Phone Number</h3><input name="rphone" class="register-text" type="text" placeholder="Phone Number" maxlength=11 required><br>
+            <input class="regibut" type="submit" value="Register">
+        </form>
+      </center>
+      </div>
+    <div class="footer">
+      
+    </div>
+  </body>
+</html>

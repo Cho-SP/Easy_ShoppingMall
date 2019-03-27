@@ -1,0 +1,89 @@
+body{
+  margin:0;
+  padding:0;
+}
+
+h1{
+  font-family: 'Oswald', sans-serif;
+  color:#000000;
+  font-size:25px;
+  display:block;
+}
+
+h1 a{
+  text-decoration:none;
+  color:#000000;
+}
+h1 a:hover{
+  background-color:#000000;
+  color:#ffffff;
+}
+p{
+  padding:0 0 0 1000px;
+  color:#000000;
+  font-size:15px;
+  position:absolute;
+  font-weight:bold;
+}
+#menu{
+  font-family: 'Oswald', sans-serif;
+  display:block;
+  background-color:#000000;
+  width:100%;
+  position:fixed;
+  top:70px;
+  padding:0 0 0 275px;
+  transition:top 1s;
+}
+#menu a{
+  float:left;
+  text-decoration:none;
+  padding:15px 100px;
+  text-align:center;
+  display:block;
+  color:#ffffff;
+}
+#menu a:hover{
+  background-color:#504a4a;
+
+}
+#menu a:active{
+  background-color:#e7e1e1;
+  color:#000000;
+}
+.wrapper{
+  padding:100px 200px 0 200px;
+}
+#columns{
+  column-width:350px;
+  column-gap: 15px;
+}
+#columns figure{
+  display: inline-block;
+  border:1px solid rgba(0,0,0,0.2);
+  margin:0;
+  margin-bottom: 15px;
+  padding:10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);;
+}
+#columns figure:hover{
+  background-color:#7a7979;
+}
+#columns figure img{
+  width:100%;
+}
+#columns figure figcaption{
+  border-top:1px solid rgba(0,0,0,0.2);
+  padding:10px;
+  margin-top:11px;
+  font-weight:bold;
+  color:#000000;
+}
+h2{
+  font-family: 'Oswald', sans-serif;
+  font-weight:bold;
+  font-size:40px;
+}
+.footer{
+  margin:100px;
+}

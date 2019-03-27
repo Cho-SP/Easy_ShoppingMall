@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Mall</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/number.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="/javascripts/scroll.js"></script>
+  </head>
+  <body>
+        <% if(sess){ %>
+            <p>
+              <%= nick.idname %> is login
+            </p>
+          <% } %>
+      <header>
+        <center>
+        <h1><a href="/">Wearing</a></h1>
+        </center>
+      </header>
+    <div id="menu">
+        <a href="/shop">SHOP</a>
+        <a href="/comment">COMMENT</a>
+        <% if(sess){ %>
+            <a href="/logout" class="login">LOGOUT</a>
+          <% } else { %>
+          <a href="/login" class="login">LOGIN</a>
+          <% } %>
+        <a href="/developer">DEVELOPER</a>
+    </div>
+    <div class="wrapper">
+            <center>
+        <img src="/images/5.jpg">
+        <table>
+            <tr>
+                <td class="first-td">데미지 체크셔츠</td>
+            </tr>
+            <tr>
+                <td>소비자가</td>
+                <td><div class="gray-text">39,600원</div></td>
+            </tr>
+            <tr>
+                <td>판매가</td>
+                <td>19,800원</td>
+            </tr>
+            <tr>
+                <td>
+                        <select>
+                                <option>-----------Size-----------</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXL</option>
+                            </select>
+                </td>
+            </tr>
+            <td colspan=2><button onclick="location.href='/'">Add to Cart</button></td>
+        </table>
+        </center>
+    </div>
+    <div class="footer">
+      
+    </div>
+  </body>
+</html>
